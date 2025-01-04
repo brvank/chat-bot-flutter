@@ -117,6 +117,7 @@ class _ChatMetaDataScreenState extends State<ChatMetaDataScreen> {
                                                 .deleteChatMetaData(
                                                     metaDataList[index]);
                                             if(mounted){
+                                              // ignore: use_build_context_synchronously
                                               Navigator.pop(context);
                                               refresh();
                                             }
@@ -127,7 +128,7 @@ class _ChatMetaDataScreenState extends State<ChatMetaDataScreen> {
                                     );
                                   });
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.delete,
                               color: Colors.white,
                             ))

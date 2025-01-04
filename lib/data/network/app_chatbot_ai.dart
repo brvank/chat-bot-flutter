@@ -1,4 +1,3 @@
-import 'package:chatbot/util/constants.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 class AppChatBotAI {

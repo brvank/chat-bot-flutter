@@ -104,7 +104,7 @@ class _ChatDataScreenState extends State<ChatDataScreen> {
                                         vertical: 4, horizontal: 4),
                                     child: Text(
                                       chatDataList[index].data,
-                                      style: TextStyle(color: Colors.white),
+                                      style: const TextStyle(color: Colors.white),
                                     )),
                               ),
                             );
@@ -157,6 +157,7 @@ class _ChatDataScreenState extends State<ChatDataScreen> {
                             setState(() {});
                             scrollToBottom();
                           } else {
+                            // ignore: use_build_context_synchronously
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(const SnackBar(
                               content: Text(
@@ -216,6 +217,7 @@ class _ChatDataScreenState extends State<ChatDataScreen> {
                   widget.metaData.title = _metaDataTextController.text;
                   await _chatDataController.updateChatMetaData(widget.metaData);
                   if (mounted) {
+                    // ignore: use_build_context_synchronously
                     Navigator.of(context).pop();
                     setState(() {});
                   }
